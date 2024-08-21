@@ -1,0 +1,50 @@
+#--------------FUNCION SORTED-------
+
+
+# las funciones lambda se pueden almacenar en variables -> retornar=lambda x:x[1]
+
+lista_estudiantes=[('Juan', 2.4),('Esteban', 2.5), ('Edward', 3.5)]
+
+
+lista_ordenada=sorted(lista_estudiantes, key=lambda x:x[1])
+print(lista_ordenada)
+
+#--------FUNCION MAP-------------------
+
+lista_estudiantes1={'Esteban', 'Mauricio', 'Edwin'}
+
+lista_nombres_mayus= list(map(str.upper, lista_estudiantes1))
+print(lista_nombres_mayus)
+
+#-----------ejercicio con funcion creada-------
+
+lista_profesores={'Luis', 'Esteban', 'Mario'}
+sufijo='_profesor'
+
+def add_sufix(profesor):
+    return profesor+sufijo
+
+lista_profes_sufijo=list(map(add_sufix, lista_profesores))
+print(lista_profes_sufijo)
+
+#-----mismo ejercio con lambda
+
+lista_profes_sufix=list(map(lambda x:x+sufijo, lista_profesores ))
+print(lista_profes_sufix)
+
+#----------FUNCION FILTER----------
+
+numbers=[1,2,3,4,5,6,7]
+
+def par(num):
+    return num % 2== 0
+
+lista_par=list(filter(lambda x:x % 2 == 0,numbers))
+
+print(lista_par)
+
+#-----------Segundo ejemplo-------------
+nombres=['Esteban', 'Alfonso', 'Alicia', 'Enrique']
+
+nombres_a=list(filter(lambda x:x[0]=='A', nombres))
+print(nombres_a)
